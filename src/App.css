@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+  padding: 120px;
+  background-image: URL("https://cdn.shopify.com/s/files/1/1282/5135/products/DSC_0500_1024_1024x1024.jpg?v=1523432249") ;
+
+  /* Full height */
+  height:100%;
+  width:100%;
+  align-items: center;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
