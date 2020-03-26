@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {deleteItem ,deleteItems} from "./redux/actions";
 class Doneitems extends Component {
+//  clearall(){
+//    this.setState({
+//     items: [],
+//    }
+//    )
+//  }
   render() {
       const itemsList= this.props.items.filter(item => this.props.done === item.done
         //   {if (this.props.done && !item.done) return true;
@@ -16,7 +22,7 @@ class Doneitems extends Component {
           <div>
           <button type="button" className="btn btn-danger"
          onClick={()=> this.props.deleteItem(item)}
-        >Danger</button></div>
+        >Delete</button></div>
           </li>
     ));
     return (
@@ -25,7 +31,8 @@ class Doneitems extends Component {
         <label >{this.props.done ? "completed":"not completed"}</label>
         <button type="button" className="btn btn-danger ml-5"
         //  onClick={()=> this.props.deleteItems(items)}
-        >Danger</button></p>
+        // onClick={(e)=> this.clearall()}
+        >Clear All</button></p>
         <ul className="list-group list-group-flush" >
         {itemsList}
         
@@ -43,8 +50,8 @@ return {
 const mapDispatchToProps = dispatch =>{
     return {
         deleteItem: item => dispatch(deleteItem(item)),
-        deleteItems: items => dispatch(deleteItem(items)),
+        deleteItems: items => dispatch(deleteItems(items)),
     };
     };
 
-export default connect(mapStateToProps,mapDispatchToProps  )(Doneitems);
+export default connect(mapStateToProps,mapDispatchToProps)(Doneitems);

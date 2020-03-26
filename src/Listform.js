@@ -1,18 +1,40 @@
 import React, { Component } from 'react';
-
+import {connect} from "react-redux";
+import {adding_items} from "./redux/actions";
 class Listform extends Component {
+  state={
+    itemName:""
+  }
 render() {
+  
 return (
   
 <div>
   <h2 >Checker</h2>
-  <h10 >To Do  </h10>
-   <input  className="btn btn-outline-secondary" required type="text" placeholder="Enter To do list item" />
+  <h6 >To Do  </h6>
+   <input  className="btn btn-outline-secondary" required type="text" placeholder="Enter To do list item" 
+   onChange={event=> this.setState({itemName: event.target.value})}
+   />
    
-   <button className="btn btn-outline-secondary" type="button" value="Add">+ Add</button>
+   <button className="btn btn-outline-secondary" type="button" value="Add"
+   onClick={()=> this.props.adding_items(this.state.itemName)}
+   >+ Add</button>
   
 </div>
 );
 }
 }
-export default Listform;
+// const mapStateToProps = state =>{
+//   return {
+//       items:state.itemsState.items
+//   };
+//   };
+ 
+  const mapDispatchToProps = dispatch =>{
+    return {
+      adding_items: itemName => dispatch(adding_items(itemName)),
+    };
+    };
+  
+  export default connect(null,mapDispatchToProps)(Listform);
+// export default Listform;

@@ -18,7 +18,7 @@ class Items extends Component {
         </button>
         <button type="button" className="btn btn-danger"
          onClick={()=> this.props.deleteItem(item)}
-        >Danger</button></div>
+        >Delete</button></div>
         </li>
     ));
     return (

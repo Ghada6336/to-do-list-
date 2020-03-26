@@ -1,5 +1,6 @@
 // import {ADD_ITEM, UPDATE_ITEM } from "../actions/actionTypes";
 // import { DELETE_ITEM ,DELETE_ITEMS } from "../actions/actionTypes";
+// import {ADD_ITEM} from "../actions/actionTypes";
 const initialState={
 items:[
     {
@@ -28,21 +29,25 @@ const reducers= (state =initialState, action) =>{
                 
             };
         case 'DELETE_ITEMS':
-            const deletedItems = action.payload;
+            // const deletedItems = action.payload;
             return {
                 ...state,
-                items: state.items.filter(items => items !== deletedItems )
+                // items: state.items.filter(item => item !== deletedItems )
                 
                 
             };
 
-        // case 'ADD_ITEM':
-            
-        //     return {
-        //         ...state,
+        case 'ADD_ITEM':
+            const itemName = {
+                title:action.payload,
+                done: false,
+
+            };
+            return {
+                ...state,
+                items: state.items.concat([itemName] )
                 
-                
-        //     };
+            };
         // case 'UPDATE_ITEM':
             
         //     return {
