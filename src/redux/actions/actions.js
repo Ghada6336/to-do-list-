@@ -1,7 +1,7 @@
 // const ADD_ITEM="ADD_ITEM";
 
 // const UPDATE_ITEM="UPDATE_ITEM";
-import {DELETE_ITEM ,DELETE_ITEMS,ADD_ITEM} from "./actionTypes";
+import {DELETE_ITEM ,DELETE_ITEMS,ADD_ITEM ,UPDATE_ITEM} from "./actionTypes";
 export const adding_items =itemName =>{
     return {
         type:ADD_ITEM,
@@ -9,12 +9,12 @@ export const adding_items =itemName =>{
     }
 }
  
-// export const updating_items =() =>{
-//     return {
-//         type:UPDATE_ITEM,
-//         payload: items,
-//     }
-// }
+export const updating_items = item=>{
+    return {
+        type:UPDATE_ITEM,
+        payload: item,
+    }
+}
 
 export const deleteItem = item =>{
     return {

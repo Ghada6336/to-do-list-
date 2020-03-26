@@ -3,18 +3,18 @@
 // import {ADD_ITEM} from "../actions/actionTypes";
 const initialState={
 items:[
-    {
-        title:"first",
-        done: true,
-    },
-    {
-        title:"second",
-        done:false,
-    },
-    {   
-        title:"third",
-        done:false,
-    }
+    // {
+    //     title:"first",
+    //     done: true,
+    // },
+    // {
+    //     title:"second",
+    //     done:false,
+    // },
+    // {   
+    //     title:"third",
+    //     done:false,
+    // }
 ]
 };
 
@@ -41,20 +41,21 @@ const reducers= (state =initialState, action) =>{
             const itemName = {
                 title:action.payload,
                 done: false,
-
             };
             return {
                 ...state,
-                items: state.items.concat([itemName] )
+                // items: state.items.concat([itemName] )//at list end 
+                items: [itemName].concat( state.items )//at list begining
+            };
+        case 'UPDATE_ITEM':
+            const item= action.payload;
+            item.done=!item.done;
+            return {
+                ...state,
+                items:[...state.items,]
+                
                 
             };
-        // case 'UPDATE_ITEM':
-            
-        //     return {
-        //         ...state,
-                
-                
-        //     };
         default:
             return state;
 

@@ -15,10 +15,10 @@ class Doneitems extends Component {
 
       )
         .map(item =>(
-        <li className="list-group-item list-group-item-success"style={{
+        <li className="list-group-item list-group-item-success" key={item.title} style={{
             textDecoration:'line-through'
           }}>{item.title}
-          {/* <button type="button" className="btn btn-success">Primary</button> */}
+          
           <div>
           <button type="button" className="btn btn-danger"
          onClick={()=> this.props.deleteItem(item)}

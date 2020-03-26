@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
-import {deleteItem} from "./redux/actions";
+import {deleteItem,updating_items} from "./redux/actions";
 class Items extends Component {
   render() {
       const itemsList= this.props.items.filter(item => this.props.done === item.done
@@ -9,10 +9,10 @@ class Items extends Component {
 
       )
         .map(item =>(
-        <li className="list-group-item list-group-item-primary">{item.title}
+        <li className="list-group-item list-group-item-primary" key={item.title}>{item.title}
         <div>
         <button type="button" className="btn btn-primary mr-1"
-        //  onClick={()=> this.props.updating_items(item)}
+        onClick={()=> this.props.updating_items(item)}
         >Move to done
         {/*  {item.done ? "to do " :"not done"} */}
         </button>
@@ -41,6 +41,7 @@ return {
 const mapDispatchToProps = dispatch =>{
     return {
         deleteItem: item => dispatch(deleteItem(item)),
+        updating_items: item => dispatch(updating_items(item)),
     };
     };
 
