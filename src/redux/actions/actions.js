@@ -22,9 +22,9 @@ export const deleteItem = item =>{
         payload: item,
     }
 }
-export const deleteItems = items =>{
+export const deleteItems = () =>{
     return {
         type:DELETE_ITEMS,
-        payload: items,
+       
     }
 }

@@ -15,7 +15,7 @@ class Doneitems extends Component {
 
       )
         .map(item =>(
-        <li className="list-group-item list-group-item-success" key={item.title} style={{
+        <li className="list-group-item list-group-item-success" key={item.title}  style={{
             textDecoration:'line-through'
           }}>{item.title}
           
@@ -28,10 +28,11 @@ class Doneitems extends Component {
     return (
     <div>
         <p>
-        <label >{this.props.done ? "completed":"not completed"}</label>
+        <span className ="label label-primary">{this.props.done ? "completed":"not completed"}</span>
+        
         <button type="button" className="btn btn-danger ml-5"
-        //  onClick={()=> this.props.deleteItems(items)}
-        // onClick={(e)=> this.clearall()}
+         onClick={this.props.deleteItems}
+        // onClick={()=> this.clearall()}
         >Clear All</button></p>
         <ul className="list-group list-group-flush" >
         {itemsList}
@@ -50,7 +51,7 @@ return {
 const mapDispatchToProps = dispatch =>{
     return {
         deleteItem: item => dispatch(deleteItem(item)),
-        deleteItems: items => dispatch(deleteItems(items)),
+        deleteItems: () => dispatch(deleteItems()),
     };
     };
 

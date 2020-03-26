@@ -10,13 +10,14 @@ render() {
 return (
   
 <div>
+  
   <h2 >Checker</h2>
   <h6 >To Do  </h6>
-   <input  className="btn btn-outline-secondary" required type="text" placeholder="Enter To do list item" 
+   <input  className="btn btn-warning" required type="text" placeholder="Enter To do list item" 
    onChange={event=> this.setState({itemName: event.target.value})}
    />
    
-   <button className="btn btn-outline-secondary" type="button" value="Add"
+   <button className="btn btn-warning" type="button" value="Add"
    onClick={()=> this.props.adding_items(this.state.itemName)}
    >+ Add</button>
   

@@ -3,18 +3,18 @@
 // import {ADD_ITEM} from "../actions/actionTypes";
 const initialState={
 items:[
-    // {
-    //     title:"first",
-    //     done: true,
-    // },
-    // {
-    //     title:"second",
-    //     done:false,
-    // },
-    // {   
-    //     title:"third",
-    //     done:false,
-    // }
+    {
+        title:"first",
+        done: true,
+    },
+    {
+        title:"second",
+        done:false,
+    },
+    {   
+        title:"third",
+        done:false,
+    }
 ]
 };
 
@@ -32,7 +32,9 @@ const reducers= (state =initialState, action) =>{
             // const deletedItems = action.payload;
             return {
                 ...state,
-                // items: state.items.filter(item => item !== deletedItems )
+                items: state.items.filter( item => !item.done)
+                // items: state.items.empty(deletedItems)
+                // items: state.items.splice(0, deletedItems )
                 
                 
             };

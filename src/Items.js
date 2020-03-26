@@ -23,7 +23,8 @@ class Items extends Component {
     ));
     return (
     <div>
-        <label>{this.props.done ? "completed":"not completed"}</label>
+        <span className ="label label-primary">{this.props.done ? "completed":"not completed"}</span>
+        
         <ul className="list-group list-group-flush">
         {itemsList}
         
