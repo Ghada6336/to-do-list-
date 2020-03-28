@@ -13,6 +13,7 @@ class Items extends Component {
                 type="checkbox"
                 aria-label="Checkbox for following text input"
                 onClick={() => this.props.updating_items(item)}
+                // localStorage.setItem("state", itemName);
               />
             </span>
           </div>
@@ -20,7 +21,6 @@ class Items extends Component {
             type="text"
             className="form-control list-group-item-primary"
             aria-label="Amount (to the nearest dollar)"
-            // className="list-group-item list-group-item-primary"
           >
             {item.title}
           </li>
